@@ -1,0 +1,18 @@
+<mat-card><h1>{{ title }}</h1></mat-card>
+
+<mat-card>
+  <mat-card-title>
+    Two Way Data Binding
+  </mat-card-title>
+
+  <mat-card-subtitle>
+    Exemplo de utilização do binding do Angular
+  </mat-card-subtitle>
+
+  <mat-form-field>
+    <mat-label>Xpto</mat-label>
+    <input matInput placeholder="Xpto" name="xpto" [(ngModel)]="xpto">
+  </mat-form-field>
+
+  <span [ngModel]="xpto">{{ xpto }}</span>
+</mat-card>
