@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>
+    Clientes
+  </mat-card-title>
+
+  <mat-card-subtitle>
+    Essa é minha lista de clientes
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <form>
+      <mat-form-field class="input">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código" name="codigo" [(ngModel)]="codigo">
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" name="nome" [(ngModel)]="nome">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="filtrar()">Filtrar</button>
+      <button mat-raised-button color="primary" (click)="limpar()">Limpar Filtro</button>
+      <button mat-raised-button color="primary" (click)="incluir()">Incluir Novo Cliente</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+<cliente-lista [clienteConsultaDTO]="clienteConsultaDTO" *ngIf="showResult"></cliente-lista>

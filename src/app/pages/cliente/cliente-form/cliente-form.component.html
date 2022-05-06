@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-card-title>
+    Inclusão de Clientes
+  </mat-card-title>
+
+  <mat-card-subtitle>
+    Essa é minha tela de inclusão de clientes
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <form #form="ngForm" [formGroup]="formGroup" (ngSubmit)="salvar()">
+      <mat-form-field class="input">
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="codigo">
+        <mat-error *ngIf="formGroup.get('codigo').invalid">
+          {{ validationMessages.getCodigoMessages(formGroup.get('codigo')) }}
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field class="input">
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf">
+        <mat-error *ngIf="formGroup.get('cpf').invalid">
+          {{ validationMessages.getCpfMessages(formGroup.get('cpf')) }}
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field class="input">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="nome">
+        <mat-error *ngIf="formGroup.get('nome').invalid">
+          {{ validationMessages.getNomeMessages(formGroup.get('nome')) }}
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field class="input">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="formGroup.get('email').invalid">
+          {{ validationMessages.getEmailMessages(formGroup.get('email')) }}
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field class="input">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone">
+        <mat-error *ngIf="formGroup.get('telefone').invalid">
+          {{ validationMessages.getTelefoneMessages(formGroup.get('telefone')) }}
+        </mat-error>
+      </mat-form-field><br>
+
+      <button type="submit" mat-raised-button [disabled]="!form.valid">Salvar</button>
+    </form>
+  </mat-card-content>
+</mat-card>

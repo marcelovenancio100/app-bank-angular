@@ -8,16 +8,15 @@ const routes: Routes = [
     component: PagesComponent,
     children: [
       {
-        path: 'tela1',
-        //component: Tela1Component,
-        loadChildren: () => import('./tela1/tela1.module').then(res => res.Tela1Module)
+        path: 'cliente',
+        //component: ClienteComponent,
+        loadChildren: () => import('./cliente/cliente.module').then(res => res.ClienteModule)
       },
       {
         path: 'tela2',
         //component: Tela2Component,
         loadChildren: () => import('./tela2/tela2.module').then(res => res.Tela2Module)
-      }
-      ,
+      },
       {
         path: 'tela3',
         //component: Tela3Component,
